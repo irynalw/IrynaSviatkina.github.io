@@ -1,0 +1,1051 @@
+@charset "UTF-8";
+html {
+  /* font-size: 10px; */
+  box-sizing: border-box; }
+
+/* @meida (max-width: $medium) {
+  html {
+    font-size: 8px; } } */
+* {
+  box-sizing: inherit; }
+
+.grid {
+  /* flex-ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ */
+  display: flex; }
+
+.grid.column {
+  flex-direction: column; }
+
+.grid.row {
+  flex-direction: row; }
+
+.grid.space-between {
+  justify-content: space-between; }
+
+.grid.align-center {
+  align-items: center; }
+
+.grid__item_size1-2 {
+  width: 50%; }
+
+.grid__item_size1-4 {
+  width: 25%; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.padding_small {
+  padding: 1rem; }
+
+.padding_small_vert {
+  padding: 1rem 0; }
+
+.padding_small_hor {
+  padding: 0 1rem; }
+
+.padding_middle {
+  padding: 2rem; }
+
+.padding_middle_vert {
+  padding: 2rem 0; }
+
+.padding_middle_hor {
+  padding: 0 2rem; }
+
+.padding_large {
+  padding: 5rem; }
+
+.padding_large_vert {
+  padding: 5rem 0; }
+
+.padding_large_hor {
+  padding: 0 5rem; }
+
+.padding_reset {
+  padding: 0; }
+
+/* also  add variables for colors, fonts
+  add adaptive for grid items  */
+/*# sourceMappingURL=grid.css.map */
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  src: url(../fonts/OpenSans-Light.ttf);
+  src: url(../fonts/OpenSans-SemiBold.ttf); }
+
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Regular.ttf);
+  src: url(../fonts/Oswald-Light.ttf);
+  src: url(../fonts/Oswald-SemiBold.ttf);
+  src: url(../fonts/Oswald-Medium.ttf); }
+
+@font-face {
+  font-family: fontello;
+  src: url(../fonts/fontello.woff), url(../fonts/fontello.woff2); }
+
+/* * {
+      outline: 1px solid green;
+}    */
+.container {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+header {
+  height: 145px;
+  background-color: #1b1b1b;
+  color: #fefefe; }
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  background: url(../img/logo.svg); }
+
+.logo-img, .logo-text {
+  display: inline-block; }
+
+.logo-text {
+  font-family: Oswald;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 98.83px;
+  letter-spacing: 1.25px;
+  padding-left: 8px; }
+
+.header-content, .header__item {
+  flex-wrap: nowrap; }
+
+.header__item__icon {
+  color: #df3636; }
+
+.header__item__icon, .header__item__text {
+  padding: 0 5px; }
+
+.header-nav__item, .header-nav__item_vert a {
+  color: #fefefe;
+  text-decoration: none; }
+
+.header-nav__item:hover, .header-nav__item_vert a:hover {
+  color: #df3636;
+  text-decoration: none; }
+
+.header__menu {
+  list-style: none;
+  padding-left: 0; }
+
+.header__menu > li {
+  display: inline-block;
+  margin-right: 15px; }
+
+.header__menu li:last-child {
+  margin-right: 0; }
+
+.header-nav {
+  height: 70px;
+  background-color: #282828;
+  color: #fefefe;
+  position: relative; }
+
+.header-nav__search {
+  width: 38px;
+  height: 38px;
+  background-color: #171717;
+  border: 1x solid #171717;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 2.4;
+  position: relative; }
+
+.compare-icon, .cart-icon {
+  padding-left: 5px; }
+
+.header-nav__compare {
+  margin-left: 50px; }
+
+.header-nav__item:hover, .header-nav__compare:hover, .header-nav__search:hover, .header-nav__cart:hover, .menu-hide:hover {
+  color: #df3636; }
+
+.header__item:hover {
+  color: #c2bebe; }
+
+.menu-button {
+  width: 35px;
+  height: 35px;
+  background: url(../img/menu-button.svg);
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.menu-button_rotate {
+  transform: rotate(90deg);
+  transition: 1s; }
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s; }
+
+.header__menu_vert {
+  display: block !important;
+  position: absolute;
+  width: 200px;
+  background: #282828;
+  opacity: 0.8;
+  bottom: -225px;
+  left: 0;
+  padding: 5px 5px 5px 15px; }
+
+.header__menu_vert .header-nav__item {
+  display: block;
+  padding: 5px 40px 5px 0; }
+
+.search-input {
+  position: absolute;
+  top: 70px;
+  right: 15px; }
+
+.hidden {
+  display: none; }
+
+.cart-window {
+  position: absolute;
+  top: 250px;
+  left: 15%;
+  width: 70%;
+  height: 500px;
+  z-index: 2;
+  background-color: #464646; }
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  display: none;
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: -125px;
+  /* Divide value of min-width by 2 */
+  background-color: #333;
+  /* Black background color */
+  color: #a90a0a;
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 90%;
+  /* Center the snackbar */
+  top: 30px;
+  /* 30px from the bottom */ }
+
+@media (max-width: 900px) {
+  .header__nav {
+    display: none; }
+  .header-nav {
+    position: relative; }
+  .menu-button {
+    display: block !important; }
+  .header-content {
+    display: block; }
+  .header__item {
+    margin-bottom: 5px;
+    margin-top: 5px; } }
+
+@media (max-width: 470px) {
+  .header-content {
+    display: none; } }
+
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  src: url(../fonts/OpenSans-Light.ttf);
+  src: url(../fonts/OpenSans-SemiBold.ttf); }
+
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Regular.ttf);
+  src: url(../fonts/Oswald-Light.ttf);
+  src: url(../fonts/Oswald-SemiBold.ttf);
+  src: url(../fonts/Oswald-Medium.ttf); }
+
+@font-face {
+  font-family: fontello;
+  src: url(../fonts/fontello.woff), url(../fonts/fontello.woff2); }
+
+/* * {
+      outline: 1px solid green;
+  }    */
+.main-color {
+  color: #df3636; }
+
+.auto-search {
+  background-color: #000000;
+  color: #ffffff; }
+
+.auto-search__content, .auto-search__form {
+  width: 47%;
+  letter-spacing: 0.42px; }
+
+.auto-search__heading, .auto-search__price {
+  font-family: Oswald;
+  font-size: 53px;
+  font-weight: 700;
+  line-height: 91.06px;
+  /* letter-spacing: 0.42px; */ }
+
+.auto-search__text {
+  color: #ffffff;
+  font-family: Oswald;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px; }
+
+.button_learn-more, .button_search {
+  width: 153px;
+  height: 50px;
+  background-color: #df3636;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  margin: 2rem 0; }
+
+.button_learn-more:hover, .button_search:hover {
+  box-shadow: 0 0 20px rgba(109, 109, 109, 0.9); }
+
+.homepage__form {
+  height: 447px;
+  background-color: #1b1b1b;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2rem 1rem; }
+
+.form__heading {
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.54px; }
+
+.form__select {
+  width: 100%;
+  height: 40px;
+  background-color: #313131;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 1.5rem;
+  border: none;
+  font-family: Oswald; }
+
+.form__details {
+  font-family: Oswald;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  text-align: left; }
+
+.slider-nav_prev, .slider-nav_next {
+  width: 75px;
+  height: 75px;
+  background-color: #ffffff;
+  color: #363636;
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 3; }
+
+.form__select:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+
+/* SLIDER */
+.slide-2, .slide-3 {
+  height: 445px; }
+
+/*
+.mySlides {
+    display: none;
+}  */
+.slider-nav_prev, .slider-nav_next {
+  cursor: pointer; }
+
+.slider-nav_prev:hover, .slider-nav_next:hover {
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 0 0 20px rgba(109, 109, 109, 0.9); }
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  src: url(../fonts/OpenSans-Light.ttf);
+  src: url(../fonts/OpenSans-SemiBold.ttf); }
+
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Regular.ttf);
+  src: url(../fonts/Oswald-Light.ttf);
+  src: url(../fonts/Oswald-SemiBold.ttf);
+  src: url(../fonts/Oswald-Medium.ttf); }
+
+@font-face {
+  font-family: fontello;
+  src: url(../fonts/fontello.woff), url(../fonts/fontello.woff2); }
+
+/* * {
+      outline: 1px solid green;
+  }    */
+.main-color {
+  color: #df3636; }
+
+.hr_grey {
+  display: inline-block;
+  width: 17%;
+  font-weight: 100; }
+
+.hr_red {
+  width: 3%;
+  display: inline-block; }
+
+.our-car__heading {
+  TEXT-ALIGN: CENTER;
+  color: black;
+  font-family: Oswald;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1.2rem; }
+
+.our-car__subheading {
+  TEXT-ALIGN: CENTER;
+  color: #a4a2a2;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 7.2px; }
+
+.our-car__new-cars, .our-car__user-car {
+  display: inline-block;
+  color: #646464;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26.4px;
+  margin: 2rem 2rem 2rem 0; }
+
+.our-car__catalogue {
+  flex-wrap: wrap;
+  max-width: 1140px; }
+
+.our-car__catalogue__item {
+  width: 22%;
+  margin-top: 2rem;
+  position: relative; }
+
+.catalogue__item_img {
+  width: 100%;
+  height: 195px;
+  background: url(../img/bmwx6.jpg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.catalogue__item_price {
+  height: 46px;
+  width: 100%;
+  position: absolute;
+  bottom: 36px;
+  left: 0px;
+  margin-bottom: 0.7rem; }
+
+.item_price {
+  background-color: #df3636;
+  opacity: 0.5;
+  width: 300px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26.4px;
+  padding: 10px 0 0 10px; }
+
+.item_triangle {
+  border: 23px solid transparent;
+  border-bottom: 23px solid #df3636;
+  opacity: 0.5;
+  border-left: 23px solid #df3636;
+  opacity: 0.5; }
+
+.catalogue__item_description {
+  color: #1d1d1d;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 700; }
+
+.button_view-all {
+  display: block;
+  margin: 2rem auto; }
+
+.our-car__catalogue__item:hover .catalogue__item_description {
+  color: #df3636; }
+
+.button_view-all {
+  width: 153px;
+  height: 50px;
+  background-color: #df3636;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  border: none; }
+
+.button_view-all:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); }
+
+/* tabs */
+.tab_underline {
+  border-bottom: 2px solid #df3636; }
+
+.our-car__tab:hover {
+  cursor: pointer; }
+
+/* USER CARS tab */
+.user-cars {
+  display: none; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.user-cars .catalogue__item_img {
+  background: url(../img/user-car.jpg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+@media (max-width: 840px) {
+  .our-car__catalogue {
+    flex-wrap: wrap; }
+  .our-car__catalogue__item {
+    width: 30%; } }
+
+@media (max-width: 690px) {
+  .our-car__catalogue__item {
+    width: 48%; } }
+
+@media (max-width: 460px) {
+  .hr_red, .hr_grey {
+    display: none; }
+  .our-car__catalogue__item {
+    width: 98%; } }
+
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  src: url(../fonts/OpenSans-Light.ttf);
+  src: url(../fonts/OpenSans-SemiBold.ttf); }
+
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Regular.ttf);
+  src: url(../fonts/Oswald-Light.ttf);
+  src: url(../fonts/Oswald-SemiBold.ttf);
+  src: url(../fonts/Oswald-Medium.ttf); }
+
+@font-face {
+  font-family: fontello;
+  src: url(../fonts/fontello.woff), url(../fonts/fontello.woff2); }
+
+/* * {
+      outline: 1px solid green;
+  }    */
+.button_learn-more, .button_search, .button_view-all {
+  width: 153px;
+  height: 50px;
+  background-color: #df3636;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  border: none;
+  margin: 2rem 0; }
+
+.button_learn-more:hover, .button_search:hover, .button_view-all:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); }
+
+.button_learn-more:hover, .button_search:hover {
+  box-shadow: 0 0 20px rgba(136, 135, 136, 0.8); }
+
+.main-color {
+  color: #df3636; }
+
+/* OUR CAR */
+.our-car__heading {
+  color: black !important; }
+
+.our-car__new-cars, .our-car__user-car {
+  display: inline-block;
+  color: #646464;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26.4px;
+  margin: 2rem 2rem 2rem 0; }
+
+.our-car__catalogue {
+  flex-wrap: wrap;
+  max-width: 1140px; }
+
+.our-car__catalogue__item {
+  width: 22%;
+  margin-top: 2rem;
+  position: relative; }
+
+.catalogue__item_img {
+  width: 100%;
+  height: 195px;
+  background: url(../img/bmwx6.jpg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.catalogue__item_price {
+  height: 46px;
+  width: 100%;
+  position: absolute;
+  bottom: 36px;
+  left: 0px;
+  margin-bottom: 0.7rem; }
+
+.item_price {
+  background-color: #df3636;
+  opacity: 0.5;
+  width: 300px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26.4px;
+  padding: 10px 0 0 10px; }
+
+.item_triangle {
+  border: 23px solid transparent;
+  border-bottom: 23px solid #df3636;
+  opacity: 0.5;
+  border-left: 23px solid #df3636;
+  opacity: 0.5; }
+
+.catalogue__item_description {
+  color: #1d1d1d;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 700; }
+
+.button_view-all {
+  display: block;
+  margin: 2rem auto; }
+
+.our-car__catalogue__item:hover .catalogue__item_description {
+  color: #df3636; }
+
+/* SPECIALS */
+.specials {
+  background-color: #1a1a1a; }
+
+.specials__slider__item {
+  height: 862px;
+  margin-top: 3rem;
+  align-items: flex-end; }
+
+.specials__slider__item_grey {
+  background-color: #292929;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between; }
+
+.specials__slider__item_black {
+  background-color: #111111; }
+
+.slider__item__description {
+  padding: 2rem; }
+
+.slider__item__description_bigfont {
+  color: #ffffff;
+  font-family: Oswald;
+  font-size: 47px;
+  font-weight: 700;
+  line-height: 80.81px;
+  letter-spacing: 0.42px; }
+
+.slider__item__description_mediumfont {
+  font-family: Oswald;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 53.67px;
+  color: #ffffff;
+  letter-spacing: 0.42px; }
+
+.yellow-color {
+  color: #fae44d; }
+
+.slider__item__details {
+  max-width: 425px;
+  height: 164px;
+  background-color: #df3636;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-family: Oswald;
+  font-size: 47px;
+  font-weight: 700; }
+
+.slider__item__details_percent {
+  font-size: 114px;
+  padding: 0 2.5rem; }
+
+.specials__slider__item:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); }
+
+.specials__slider_nav {
+  margin: 2rem auto;
+  width: 200px; }
+
+.specials__slider_prev, .specials__slider_next {
+  width: 20px;
+  height: 20px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #727171;
+  line-height: 0.8; }
+
+.specials__slider__indicator {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #727171; }
+
+.specials__slider__indicator:hover {
+  box-shadow: 0 0 10px rgba(97, 96, 96, 0.741); }
+
+.specials__slider_prev:hover, .specials__slider_next:hover {
+  text-shadow: 1px 1px 1px #807f7f; }
+
+/* buy-sell */
+.buy-sell-car__item {
+  width: 49%;
+  color: #ffffff;
+  font-family: Oswald;
+  padding: 4rem 2rem; }
+
+.buy-sell-car__img {
+  background: url(../img/car.png) no-repeat;
+  /* background-size:cover; */
+  background-position: center;
+  width: 120px;
+  height: 70px; }
+
+.buy-car {
+  background-color: #df3636; }
+
+.sell-car {
+  background-color: #1a1a1a; }
+
+.buy-sell-car__icon {
+  font-size: 2rem;
+  text-align: center;
+  height: 50px;
+  line-height: 1.5; }
+
+.buy-sell-car__heading {
+  font-size: 22px;
+  margin-bottom: 2rem; }
+
+.buy-sell-car__text {
+  font-size: 14px;
+  line-height: 26.4px; }
+
+.buy-sell-car__item:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); }
+
+/* WHY CHOOSE US */
+.why-choose-us {
+  padding: 4rem 1rem;
+  background-color: #1b1b1b;
+  color: #fefefe; }
+
+.why-choose-us__heading, .our-car__heading, .specials__heading, .our-team__heading {
+  TEXT-ALIGN: CENTER;
+  color: #ffffff;
+  font-family: Oswald;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 1.2rem; }
+
+.why-choose-us__subheading, .our-car__subheading, .specials__subheading, .our-team__subheading {
+  TEXT-ALIGN: CENTER;
+  color: #a4a2a2;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 7.2px; }
+
+.why-choose-us__item {
+  margin: 2rem 1rem;
+  text-align: center; }
+
+.why-us__item__icon {
+  width: 124px;
+  height: 124px;
+  margin: 0 auto; }
+
+.why-us__item__heading {
+  margin: 1rem 0;
+  color: #ffffff;
+  font-family: Oswald;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px; }
+
+.why-us__item__text {
+  color: #c0c0c0;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.7px; }
+
+.item-finances .why-us__item__icon {
+  background: url(../img/finances.png) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+.item-brands .why-us__item__icon {
+  background: url(../img/brands.svg) center no-repeat; }
+
+.item-trust .why-us__item__icon {
+  background: url(../img/trust.svg) center no-repeat; }
+
+.item-service .why-us__item__icon {
+  background: url(../img/services.svg) center no-repeat; }
+
+.hr_grey {
+  display: inline-block;
+  width: 17%;
+  font-weight: 100; }
+
+.hr_red {
+  width: 3%;
+  display: inline-block; }
+
+.why-choose-us__item:hover .why-us__item__heading {
+  color: #df3636; }
+
+/* ABOUT US */
+.our-team__heading {
+  color: black; }
+
+.team-member {
+  /* width:33%; */
+  width: 370px;
+  text-align: center;
+  margin-top: 3rem;
+  font-family: Oswald;
+  position: relative; }
+
+.team-member__photo {
+  width: 230px;
+  height: 230px;
+  background: url(../img/team-member-vorobej.jpg) center no-repeat;
+  border-radius: 115px;
+  margin: 0 auto; }
+
+.team-member__name {
+  margin: 0.5rem 0;
+  font-size: 18px; }
+
+.team-member__socials {
+  font-family: fontello;
+  position: absolute;
+  padding-right: 10px;
+  display: none; }
+
+.socials_fb {
+  top: 50px;
+  left: 55px; }
+
+.socials_g {
+  top: 97px;
+  left: 33px; }
+
+.socials_tw {
+  top: 143px;
+  left: 38px; }
+
+.socials_inst {
+  top: 188px;
+  left: 50px; }
+
+.team-member:hover .team-member__socials {
+  display: block; }
+
+.team-member:hover .team-member__photo {
+  border: 2px solid #aa2a2a;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); }
+
+.team-member__socials:hover {
+  color: #df3636; }
+
+@media (max-width: 1240px) {
+  .specials__slider {
+    flex-wrap: wrap; }
+  .specials__slider__item {
+    width: 50%;
+    height: 600px; } }
+
+@media (max-width: 1050px) {
+  .our-team__members {
+    flex-wrap: wrap;
+    justify-content: center; }
+  .team-member {
+    display: block !important; } }
+
+@media (max-width: 940px) {
+  .container-auto-search {
+    flex-wrap: wrap; }
+  .specials__slider__item {
+    width: 100%; } }
+
+@media (max-width: 840px) {
+  .our-car__catalogue {
+    flex-wrap: wrap; }
+  .our-car__catalogue__item {
+    width: 30%; } }
+
+@media (max-width: 800px) {
+  .why-choose-us__content {
+    flex-wrap: wrap; }
+  .buy-sell-container {
+    flex-wrap: wrap;
+    justify-content: center !important; }
+  .buy-sell-car__item {
+    width: 90%; } }
+
+@media (max-width: 690px) {
+  .our-car__catalogue__item {
+    width: 48%; } }
+
+@media (max-width: 460px) {
+  .hr_red, .hr_grey {
+    display: none; }
+  .our-car__catalogue__item {
+    width: 98%; } }
+
+.slider-img {
+  background-color: black; }
+
+.slider-nav_prev, .slider-nav_next {
+  width: 75px;
+  height: 75px;
+  background-color: #ffffff;
+  color: #363636;
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 3; }
+
+.slider-nav_prev, .slider-nav_next {
+  cursor: pointer; }
+
+.slider-nav_prev:hover, .slider-nav_next:hover {
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 0 0 20px rgba(109, 109, 109, 0.9); }
+
+.footer-nav__item, .footer-nav__item_vert a {
+  color: #fefefe;
+  text-decoration: none; }
+
+.footer-nav__item:hover, .footer-nav__item_vert a:hover {
+  color: #df3636;
+  text-decoration: none; }
+
+.footer__menu {
+  list-style: none;
+  padding-left: 0; }
+
+.footer__menu > li {
+  display: inline-block;
+  margin-right: 15px; }
+
+.footer__menu li:last-child {
+  margin-right: 0; }
+
+.footer-nav {
+  height: 70px;
+  background-color: #282828;
+  color: #fefefe;
+  position: relative; }
+
+.footer-nav__search {
+  width: 38px;
+  height: 38px;
+  background-color: #171717;
+  border: 1px solid #171717;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 2.4; }
+
+.compare-icon, .cart-icon {
+  padding-left: 5px; }
+
+.footer-nav__compare {
+  margin-left: 50px; }
+
+.footer-nav__item:hover, .footer-nav__compare:hover, .footer-nav__search:hover, .footer-nav__cart:hover, .menu-hide:hover {
+  color: #df3636; }
+
+.footer__item:hover {
+  color: #c2bebe; }
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s; }
+
+@media (max-width: 900px) {
+  .footer__nav {
+    display: none; }
+  .footer-nav {
+    position: relative; }
+  .menu-button {
+    display: block !important; }
+  .footer-content {
+    display: block; }
+  .footer__item {
+    margin-bottom: 5px;
+    margin-top: 5px; } }
