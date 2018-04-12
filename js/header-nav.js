@@ -22,11 +22,11 @@ $(document).ready(function(){
 
 
     $(".not-ready").click(function(){
-        $("#snackbar").fadeIn(500).delay(2000).fadeOut(700);
+        $("#snackbar").fadeIn(400).delay(1500).fadeOut(600);
     })
 
     $(".empty-cart").click(function(){
-        $("#snackbar-cart").fadeIn(500).delay(2000).fadeOut(700);
+        $("#snackbar-cart").fadeIn(400).delay(1500).fadeOut(600);
     })
 
 });

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var images=[ "img/auto1.jpg", "img/auto2.jpg" ];
+var images=[ "img/auto1.jpg", "img/auto2.jpg", "img/auto3.jpg" ];
 var num=0;
 
 $('.slider-nav_next').click(next);

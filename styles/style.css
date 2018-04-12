@@ -557,6 +557,11 @@ button:active{
   background-size: contain;
   background-position: center; }
 
+  @media (max-width: 940px) {
+  .catalogue__item_description{
+    font-size: 15px!important;
+  }
+  }
 @media (max-width: 840px) {
   .our-car__catalogue {
     flex-wrap: wrap; }
@@ -565,7 +570,11 @@ button:active{
 
 @media (max-width: 690px) {
   .our-car__catalogue__item {
-    width: 48%; } }
+    width: 48%; } 
+  .container-auto-search{flex-wrap:wrap;}
+  .auto-search__content, .auto-search__form {
+    width:98%;}
+  }
 
 @media (max-width: 460px) {
   .hr_red, .hr_grey {
@@ -924,7 +933,11 @@ button:active{
   border: 2px solid #aa2a2a;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); }
 
-.team-member__socials:hover {
+.team-member__socials a {
+  color:rgb(26, 25, 25);
+  text-decoration: none;
+}
+.team-member__socials:hover a{
   color: #df3636; }
 
 @media (max-width: 1240px) {
