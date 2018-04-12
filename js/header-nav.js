@@ -14,10 +14,10 @@ $(document).ready(function(){
         $('.search-input').toggleClass("hidden");
     }
 
-    $('.header-nav__cart').click( function(){
-        $('.cart-window').toggleClass('hidden');
-        }
-    );
+    // $('.header-nav__cart').click( function(){
+    //     $('.cart-window').toggleClass('hidden');
+    //     }
+    // );
 
 
 
@@ -25,5 +25,8 @@ $(document).ready(function(){
         $("#snackbar").fadeIn(500).delay(2000).fadeOut(700);
     })
 
+    $(".empty-cart").click(function(){
+        $("#snackbar-cart").fadeIn(500).delay(2000).fadeOut(700);
+    })
 
 });

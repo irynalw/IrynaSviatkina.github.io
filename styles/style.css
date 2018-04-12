@@ -218,7 +218,7 @@ header {
   background-color: #464646; }
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
-#snackbar {
+#snackbar, #snackbar-cart {
   display: none;
   min-width: 250px;
   /* Set a default minimum width */
@@ -238,7 +238,8 @@ header {
   /* Sit on top of the screen */
   z-index: 1;
   /* Add a z-index if needed */
-  left: 90%;
+  /* left: 90%; */
+  right: 10px;
   /* Center the snackbar */
   top: 30px;
   /* 30px from the bottom */ }
@@ -368,6 +369,12 @@ header {
 .form__select:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
 
+button:active, select:active, button:focus, select:focus {
+  outline: none!important;
+}
+button:active{
+  background-color: #c43030;
+}
 /* SLIDER */
 .slide-2, .slide-3 {
   height: 445px; }
@@ -681,7 +688,7 @@ header {
   background-color: #1a1a1a; }
 
 .specials__slider__item {
-  height: 862px;
+  height: 600px;
   margin-top: 3rem;
   align-items: flex-end; }
 
@@ -925,7 +932,7 @@ header {
     flex-wrap: wrap; }
   .specials__slider__item {
     width: 50%;
-    height: 600px; } }
+    height: 500px; } }
 
 @media (max-width: 1050px) {
   .our-team__members {
@@ -937,14 +944,16 @@ header {
 @media (max-width: 940px) {
   .container-auto-search {
     flex-wrap: wrap; }
-  .specials__slider__item {
-    width: 100%; } }
+  
+  }
 
 @media (max-width: 840px) {
   .our-car__catalogue {
     flex-wrap: wrap; }
   .our-car__catalogue__item {
-    width: 30%; } }
+    width: 30%; } 
+    .specials__slider__item {
+      width: 100%; }}
 
 @media (max-width: 800px) {
   .why-choose-us__content {
