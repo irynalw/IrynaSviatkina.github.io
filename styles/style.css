@@ -613,7 +613,9 @@ button:active{
   line-height: 24px;
   letter-spacing: 0.42px;
   border: none;
-  margin: 2rem 0; }
+  margin: 2rem 0; 
+  cursor: pointer;
+}
 
 .button_learn-more:hover, .button_search:hover, .button_view-all:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); }
@@ -1000,7 +1002,7 @@ button:active{
   text-align: center;
   line-height: 3; }
 
-.slider-nav_prev, .slider-nav_next {
+.slider-nav_prev, .slider-nav_next, .header-nav__cart, .header-nav__compare, .header-nav__search {
   cursor: pointer; }
 
 .slider-nav_prev:hover, .slider-nav_next:hover {
